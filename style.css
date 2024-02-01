@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #001927;
+    --main: #98fefd;
+    --bgText: #367179;
+    --font: 'Montserrat';
+    --borderColor: #12404d;
+    --secondary: #eaad1c;
+    --topbarText: #59a0a6;
+    --topbarMsgBg: #0c2e3b;
+}
+
+body {
+    color: white;
+    font-size: 13px;
+    min-height: 100dvh;
+    position: relative;
+    background-size: cover;
+    font-family: var(--font);
+    /* background: var(--bg); */
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-image: url(https://roatpkz.com/data/images/banner-main.jpg);
+    /* background-image: linear-gradient(180deg, var(--bg), var(--bg) 100%), url(https://roatpkz.com/data/images/banner-main.jpg); */
+}
+
+/* Utility Classes */
+.flexRow {
+    display: flex;
+    grid-gap: 15px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.fontColorMain {
+    font-weight: 700;
+    color: var(--main);
+}
+
+header {
+    width: 100%;
+    max-height: 125px;
+    background-size: cover;
+    background-position: top;
+    backdrop-filter: blur(3px);
+    background-repeat: no-repeat;
+    border-bottom: 1px solid var(--borderColor);
+    background: linear-gradient(180deg, rgba(0, 25, 39, 0.55), rgba(9, 38, 53, 0.55));
+    /* background-image: url(https://roatpkz.com/data/images/header-bg-new.png); */
+}
+
+.topbar {
+    padding: 0 15px;
+    min-height: 40px;
+    border-bottom: 1px solid var(--borderColor);
+}
+
+.navbar {
+    padding: 0 50px;
+}
+
+.menu {
+    list-style: none;
+    max-height: 85px;
+}
+
+.menuLink {
+    transition: 0.35s ease-in-out;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.menuLink:hover {
+    color: var(--secondary);
+}
+
+.navbarLogo img {
+    max-width: 12rem;
+    position: relative;
+    top: 20px;
+}
+
+/* Mobile Queries // Mobile Responsiveness */
+@media (max-width: 768px) {
+    .hideThisOnMobile {
+        display: none;
+    }
+}
