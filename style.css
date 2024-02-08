@@ -15,6 +15,7 @@
     --secondary: #eaad1c;
     --topbarText: #59a0a6;
     --topbarMsgBg: #0c2e3b;
+    --contentSidePadding: 355px;
 }
 
 body {
@@ -56,14 +57,19 @@ header {
     /* background-image: url(https://roatpkz.com/data/images/header-bg-new.png); */
 }
 
+/* .headerContainer {
+    width: 60%;
+    margin: 0 auto;
+} */
+
 .topbar {
-    padding: 0 15px;
     min-height: 40px;
+    padding: 0 var(--contentSidePadding);
     border-bottom: 1px solid var(--borderColor);
 }
 
 .navbar {
-    padding: 0 50px;
+    padding: 0 var(--contentSidePadding);
 }
 
 .menu {
@@ -83,13 +89,28 @@ header {
 }
 
 .navbarLogo img {
-    max-width: 12rem;
     position: relative;
+    max-width: 12rem;
     top: 20px;
 }
 
+section {
+    padding: 90px calc(var(--contentSidePadding) + 55px);
+}
+
+footer {
+    padding: 90px calc(var(--contentSidePadding));
+}
+
 /* Mobile Queries // Mobile Responsiveness */
-@media (max-width: 768px) {
+/* Above 1366px typically considered desktop */
+/* 1366px - 1093px is range for small laptops */
+/* 1092px - 992px is range for tablets */
+/* 768px - 678px is range for mobile */
+@media (max-width: 992px) {
+    :root {
+        --contentSidePadding: 55px;
+    }
     .hideThisOnMobile {
         display: none;
     }
