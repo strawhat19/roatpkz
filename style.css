@@ -88,6 +88,10 @@ header {
     top: 20px;
 }
 
+section {
+    padding: 90px;
+}
+
 /* Mobile Queries // Mobile Responsiveness */
 @media (max-width: 768px) {
     .hideThisOnMobile {
