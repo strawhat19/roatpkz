@@ -1,7 +1,47 @@
-let players = localStorage.getItem(`players`) ? JSON.parse(localStorage.getItem(`players`)) : Array(531).fill(null);
+let players = localStorage.getItem(`players`)
+  ? JSON.parse(localStorage.getItem(`players`))
+  : Array(531).fill(null);
+
+const toggleDropDownButtonRotate = () => {
+  let dropDownButton = document.querySelector(".dropdownButton");
+
+  dropDownButton.classList.toggle(`flippingDropdownButton`);
+};
+
+const toggleDropDownContent = () => {
+  let dropDownContent = document.querySelector(".dropdown-content");
+
+  // Toggle the display property of the dropdown content
+  dropDownContent.style.display = dropDownContent.style.display === "none" ? "flex" : "none";
+};
+
+// TOGGLING THE DROP DOWN ON AND OFF
+const toggleDropDownNavLogic = () => {
+    toggleDropDownButtonRotate()
+    toggleDropDownContent()
+//   let dropDownContent = document.querySelector(".dropdown-content");
+//   let dropDownButton = document.querySelector(".dropdownButton");
+
+//   // GetComputedStyle: This is JavaScript Method which will return an object containing the computed styles for an element
+//   const computedStyle = window.getComputedStyle(dropDownContent);
+//   // getPropertyValue: once you get the computedStyle, you can specify the PROPERTY OR CSS STYLE you want to look at "display" css in this case
+//   const currentDisplay = computedStyle.getPropertyValue("display");
+
+//   // the terinary statement says that if the display = none, it will return the value before the colon AKA display = "flex", If not it will return Display = "none"
+//   dropDownContent.style.display = currentDisplay === "none" ? "flex" : "none";
+
+//   // toggle the flip here
+//   toggleDropDownButtonRotate();
+};
+
+// defining button variable by querySelecting .dropdown
+let dropDownButton = document.querySelector(".dropdownButton");
+
+// event listener for clicking the button which will open the drop down
+dropDownButton.addEventListener("click", toggleDropDownNavLogic);
 
 const setHeaderDynamically = () => {
-    const header = $(`
+  const header = $(`
         <header>
             <div class="topbar flexRow">
                 <div class="flexRow leftCol">
@@ -39,20 +79,20 @@ const setHeaderDynamically = () => {
         </header>
     `);
 
-    $(`body`).prepend(header);
-}
+  $(`body`).prepend(header);
+};
 
 // setHeaderDynamically();
 
 const setCopyrightYearDynamically = () => {
-    // jQuery
-    let copyrightYearElement = $(`.year`);
-    copyrightYearElement.html(new Date().getFullYear());
-   
-    // Vanilla JavaScript
-    // let copyrightYearElementVanilla = document.querySelector(`.year`);
-    // copyrightYearElementVanilla.innerHTML = new Date().getFullYear();
-}
+  // jQuery
+  let copyrightYearElement = $(`.year`);
+  copyrightYearElement.html(new Date().getFullYear());
+
+  // Vanilla JavaScript
+  // let copyrightYearElementVanilla = document.querySelector(`.year`);
+  // copyrightYearElementVanilla.innerHTML = new Date().getFullYear();
+};
 
 setCopyrightYearDynamically();
 
@@ -60,7 +100,7 @@ let currentTimeElement = $(`.currentTime`);
 let playersCountElement = $(`.playersCount`);
 
 setInterval(() => {
-    currentTimeElement.html(moment().format(`hh:mm:ss A`));
+  currentTimeElement.html(moment().format(`hh:mm:ss A`));
 }, 999);
 
 playersCountElement.html(players.length);
