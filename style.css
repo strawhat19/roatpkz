@@ -40,6 +40,21 @@ body {
     justify-content: space-between;
 }
 
+.menuListItem {
+    padding: 10px;
+}
+
+.menuListItem::before {
+    margin-top: 70px;
+    content: "";
+    position: absolute;
+    background: #7a878f;
+    height: 45px;
+    width: 1px;
+    top: -10px;
+    margin-left: -15px;
+}
+
 .fontColorMain {
     font-weight: 700;
     color: var(--main);
@@ -108,6 +123,8 @@ header {
     display: flex;
     transition: 0.35s ease-in-out;
   } */
+
+
   
   .dropdown-content a, .registerDropdown-content a {
     display: block;
