@@ -30,11 +30,8 @@ const toggleRegisterDropDownButtonRotate = () => {
 const toggleDropDownContent = () => {
   let dropDownContent = document.querySelector(".dropdown-content");
 
-  
-  
   // Toggle the display property of the dropdown content
   dropDownContent.style.display = dropDownContent.style.display === "none" ? "flex" : "none";
-  
 };
 
 const toggleRegisterDropDownContent = () => {
